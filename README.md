@@ -10,11 +10,11 @@ https://www.scribd.com/document/510892625/Panorama-Stitching-P2#
 
 ## 1) Python
 
-Basically, we have to calculate all Homography before moving into OpenGL.
+Basically, we have to calculate all Homography before moving into OpenGL
 
-The main idea is to find Homography matrix of every images to the center image, then warp everything into the center image's perspective.
+The main idea is to find Homography matrix of every images to the center image, then warp everything into the center image's perspective
 
-The provided Python code can easily implement this part, we can open it in Colab, upload the 6 images, and run each block to see the result.
+The provided Python code can easily implement this part, we can open it in Colab, upload the 6 images, and run each block to see the result
 
 After getting the auto-generated code, we can copy and paste it in to OpenGL (main.cpp , line 117)
 
