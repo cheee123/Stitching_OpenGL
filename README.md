@@ -6,7 +6,7 @@ Separated into two parts: Python and OpenGL
 
 For detailed theory, please refer to:
 
-[https://www.scribd.com/document/510892625/Panorama-Stitching-P2#]
+https://www.scribd.com/document/510892625/Panorama-Stitching-P2#
 
 ## 1) Python
 
