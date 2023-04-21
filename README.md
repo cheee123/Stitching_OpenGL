@@ -16,7 +16,7 @@ The main idea is to find Homography matrix of every images to the center image, 
 
 The provided Python code can easily implement this part, we can open it in Colab, upload the 6 images, and run each block to see the result
 
-After getting the auto-generated code, we can copy and paste it in to OpenGL (main.cpp , line 117)
+After getting the auto-generated code, we can copy and paste it in to OpenGL (main.cpp , line 93)
 
 ## 2) OpenGL
 
