@@ -26,7 +26,7 @@ Required libraries for this part: opencv, GLES, glfw, glm
 
 For opencv installation, please refer to this website:
 
-[a link](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html
 
 For GLES installation:
 
