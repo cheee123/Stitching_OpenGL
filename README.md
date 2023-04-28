@@ -5,6 +5,7 @@ This project is aimed to build a GLES application that can stitch 6 images toget
 For detailed information, please refer to:
 
 https://www.scribd.com/document/510892625/Panorama-Stitching-P2#
+
 https://www.youtube.com/watch?v=D9rAOAL12SY
 
 ## 1) Python
