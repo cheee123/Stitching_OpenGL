@@ -20,6 +20,12 @@ With the auto-generated code, you can copy and paste it in to OpenGL. (main.cpp 
 
 ## 2) OpenGL
 
+Clone this repository
+
+```
+git clone https://github.com/cheee123/Stitching_OpenGL.git
+```
+
 Cylindrical Projection, Homography Transformation and Weighted Bleding are all implemented by GLSL. (stitching.frag)
 
 The required libraries for this project: opencv, GLES, glfw, glm
