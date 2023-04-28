@@ -3,24 +3,22 @@
 This project is aimed to build a GLES application that can stitch 6 images together (on Linux system). The stitching method is Cylindrical Projection + Homography Transform, and the blending method is Weighted Blending.
 
 For detailed information, please refer to:
-
 https://www.scribd.com/document/510892625/Panorama-Stitching-P2#
-
 https://www.youtube.com/watch?v=D9rAOAL12SY
 
 ## 1) Python
 
-Basically, we have to guess the value of focal length in Cylindrical Projection, calculate all Homography matrix, and create a Weight Map image before moving to OpenGL
+Basically, we have to guess the value of focal length in Cylindrical Projection, calculate all Homography matrix, and create a Weight Map image before moving to OpenGL.
 
-The main idea is to find Homography matrix of every images to the center image, then warp every image into the center image's perspective
+The main idea is to find Homography matrix of every images to the center image, then warp every image into the center image's perspective.
 
-The provided Python code can easily implement this part, you can open it with Colab, upload the 6 images, and run each block to see the result
+The provided Python code can easily implement this part, you can open it with Colab, upload the 6 images, and run each block to see the result.
 
-With the auto-generated code, you can copy and paste it in to OpenGL (main.cpp , line 93)
+With the auto-generated code, you can copy and paste it in to OpenGL. (main.cpp , line 93)
 
 ## 2) OpenGL
 
-Cylindrical Projection, Homography Transformation and Weighted Bleding are all implemented by GLSL (stitching.frag).
+Cylindrical Projection, Homography Transformation and Weighted Bleding are all implemented by GLSL. (stitching.frag)
 
 The required libraries for this project: opencv, GLES, glfw, glm
 
