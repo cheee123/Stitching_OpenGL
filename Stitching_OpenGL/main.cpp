@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include <GLES3/gl31.h>
+#include <GLES3/gl32.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -20,8 +20,8 @@
 #include "EBO.h"
 #include "Camera.h"
 
-const unsigned int width = 1200;
-const unsigned int height = 300;
+const unsigned int width = 1600;
+const unsigned int height = 400;
 
 int main()
 {	
@@ -92,39 +92,43 @@ int main()
 	/////////////////////////////////
 	//////// | Paste here | /////////
 	//////// v            v /////////
-
-	glm::mat3 H_T30, H_T31, H_T32, H_T34, H_T35;
-	H_T32[0][0] = 0.8770719944693558; H_T32[0][1] = -0.09040336004395946; H_T32[0][2] = -0.10236792372464448; 
-	H_T32[1][0] = 0.08220906737725117; H_T32[1][1] = 0.9577547222239092; H_T32[1][2] = 0.026910149374235453; 
-	H_T32[2][0] = 0.30350675007296024; H_T32[2][1] = 0.00936751761358354; H_T32[2][2] = 0.9661118972945008; 
-	H_T31[0][0] = 0.6556507627549438; H_T31[0][1] = -0.18337244528348237; H_T31[0][2] = -0.22491341246583452; 
-	H_T31[1][0] = 0.14094572964745272; H_T31[1][1] = 0.8587123544544948; H_T31[1][2] = 0.01233879989600086; 
-	H_T31[2][0] = 0.60470129233443; H_T31[2][1] = 0.007131034869454223; H_T31[2][2] = 0.8553994673312549; 
-	H_T30[0][0] = 0.3909094869695602; H_T30[0][1] = -0.25720245910296125; H_T30[0][2] = -0.2887997901770089; 
-	H_T30[1][0] = 0.14850368835769354; H_T30[1][1] = 0.6925945671672543; H_T30[1][2] = -0.042769541634736806; 
-	H_T30[2][0] = 0.8207544454586465; H_T30[2][1] = -0.010444052991869244; H_T30[2][2] = 0.7005988431160225; 
-	H_T34[0][0] = 1.0948415017246418; H_T34[0][1] = 0.11079224912862078; H_T34[0][2] = 0.11848493313790413; 
-	H_T34[1][0] = -0.08698100839493562; H_T34[1][1] = 1.053369203645852; H_T34[1][2] = 0.017629818964695322; 
-	H_T34[2][0] = -0.45573947571291157; H_T34[2][1] = -0.08949845630619221; H_T34[2][2] = 0.9495749207270244; 
-	H_T35[0][0] = 1.134051948834878; H_T35[0][1] = 0.19149763331440833; H_T35[0][2] = 0.22017071122209844; 
-	H_T35[1][0] = -0.13864178962249227; H_T35[1][1] = 1.0948107370554525; H_T35[1][2] = 0.017767919716636698; 
-	H_T35[2][0] = -0.768075893258232; H_T35[2][1] = -0.1782778992495211; H_T35[2][2] = 0.8801586464886888; 
-	glUniformMatrix3fv(glGetUniformLocation(shaderProgram.ID, "H_T30"), 1, GL_FALSE, glm::value_ptr(H_T30));
-	glUniformMatrix3fv(glGetUniformLocation(shaderProgram.ID, "H_T31"), 1, GL_FALSE, glm::value_ptr(H_T31));
-	glUniformMatrix3fv(glGetUniformLocation(shaderProgram.ID, "H_T32"), 1, GL_FALSE, glm::value_ptr(H_T32));
-	glUniformMatrix3fv(glGetUniformLocation(shaderProgram.ID, "H_T34"), 1, GL_FALSE, glm::value_ptr(H_T34));
-	glUniformMatrix3fv(glGetUniformLocation(shaderProgram.ID, "H_T35"), 1, GL_FALSE, glm::value_ptr(H_T35));
-	glUniform1f(glGetUniformLocation(shaderProgram.ID, "f"), 0.6676946806414795);
-	glUniform1f(glGetUniformLocation(shaderProgram.ID, "border_ratio"), 0.05308641975308642);
-
-	float tl_y = 0.12304250559284116;
-	float tl_x = 0.14305555555555555;
-	float br_y = 0.9172259507829977;
-	float br_x = 0.8027777777777778;
+	float buf_data [45];
+	buf_data[0] = 1.0440431349854553; buf_data[1] = 0.09396861788171709; buf_data[2] = 0.0033231587979345384; 
+	buf_data[3] = -0.09811125837669636; buf_data[4] = 1.0831161257515687; buf_data[5] = 0.07816047357260474; 
+	buf_data[6] = -0.46363365653343047; buf_data[7] = -0.12253833767828178; buf_data[8] = 0.992716912756655; 
+	buf_data[9] = 1.0280288817349985; buf_data[10] = 0.1129719503455058; buf_data[11] = -0.02104281414318166; 
+	buf_data[12] = -0.19104281568805942; buf_data[13] = 1.0866352069199552; buf_data[14] = 0.10077512263704645; 
+	buf_data[15] = -0.8594272751503724; buf_data[16] = -0.160651361474773; buf_data[17] = 1.0120056424304118; 
+	buf_data[18] = 0.9764166451652467; buf_data[19] = 0.13279874495920152; buf_data[20] = -0.042563985482310725; 
+	buf_data[21] = -0.3072769369017973; buf_data[22] = 1.0017888002416937; buf_data[23] = 0.039731456216849016; 
+	buf_data[24] = -1.0937262367977834; buf_data[25] = -0.1576075011339191; buf_data[26] = 1.036687797057253; 
+	buf_data[27] = 1.012838312254018; buf_data[28] = 0.19619897644994172; buf_data[29] = -0.026138412038396727; 
+	buf_data[30] = -0.4103697238071731; buf_data[31] = 1.023366514854249; buf_data[32] = 0.07122790973175655; 
+	buf_data[33] = -1.5582420577378204; buf_data[34] = -0.28453229111370376; buf_data[35] = 1.012016294731355; 
+	buf_data[36] = 1.0332526621777642; buf_data[37] = 0.24290995836989068; buf_data[38] = 0.006442665586610419; 
+	buf_data[39] = -0.482415566026554; buf_data[40] = 1.0178750122585298; buf_data[41] = 0.06071558655650932; 
+	buf_data[42] = -1.8616261909288512; buf_data[43] = -0.3837592542349706; buf_data[44] = 0.9535383831765064; 
+	glUniform1f(glGetUniformLocation(shaderProgram.ID, "f"), 0.7083333333333334);
+	glUniform1f(glGetUniformLocation(shaderProgram.ID, "border_ratio"), 0.065);
+	glUniform1f(glGetUniformLocation(shaderProgram.ID, "undrift"), 1.5417918639053256);
+	float tl_y = 0.17;
+	float tl_x = 0.0;
+	float br_y = 0.9;
+	float br_x = 0.44699872286079184;
 
 	/////////////////////////////////
 	/////////////////////////////////
 	/////////////////////////////////
+
+	GLuint buf;
+	glGenBuffers(1, &buf);
+	glBindBuffer(GL_TEXTURE_BUFFER, buf);
+	glBufferData(GL_TEXTURE_BUFFER, sizeof(buf_data), buf_data, GL_STATIC_DRAW);
+	//glBindBuffer(GL_TEXTURE_BUFFER, 0);
+
+	GLuint tex;
+	glGenTextures(1, &tex);
+	glBindTexture(GL_TEXTURE_BUFFER, 0);
 
 	// Debug
 	// int mainerror = glGetError();
@@ -195,6 +199,12 @@ int main()
 		brickTex4.Bind();
 		brickTex5.Bind();
 		WM_Tex.Bind();
+		
+		glActiveTexture(GL_TEXTURE0 + 8);
+		glBindTexture(GL_TEXTURE_BUFFER, tex);
+		glTexBuffer(GL_TEXTURE_BUFFER, GL_R32F, buf);
+		GLuint texUni = glGetUniformLocation(shaderProgram.ID, "buf");
+		glUniform1i(texUni, 8);
 		VAO0.Bind();
 		
 		glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
